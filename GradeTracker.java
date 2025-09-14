@@ -1,3 +1,5 @@
+// code is saved to https://github.com/VYX1/quiz-1-csi2300
+
 import java.util.Scanner;
 
 public class GradeTracker {
