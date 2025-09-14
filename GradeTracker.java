@@ -15,10 +15,10 @@ public class GradeTracker {
     /// it is considered a 'blueprint' because it is just a layout without any instance or real data.
 
     static class Student {
-        String name;
-        int grade;
+        String name; // stores information as a string. can store numbers as a string as well, but they cannot be used for math in string format.
+        int grade; // stores information as a integer. cannot accept decimal numbers or letters. can be used in mathematical equations.
 
-        Student(String name, int grade) {
+        Student(String name, int grade) { // sets up the information contained in the array
             this.name = name;
             this.grade = grade;
         }
@@ -45,18 +45,18 @@ public class GradeTracker {
 
         // Input student data
         for (int i = 0; i < MAX_STUDENTS; i++) { //simple loop to get student names and grades.
-            System.out.print("Enter name for student " + (i + 1) + ": ");
-            String name = input.nextLine(); 
+            System.out.print("Enter name for student " + (i + 1) + ": "); // prompts the user to type in a name
+            String name = input.nextLine(); // saves the name to a string stored in the array
 
             int grade;
             while (true) {
-                System.out.print("Enter grade for " + name + ": ");
+                System.out.print("Enter grade for " + name + ": "); // prompts the user to type in a grade for (name)
                 if (input.hasNextInt()) {
-                    grade = input.nextInt();
+                    grade = input.nextInt(); // saves the grade to a int var stored in the array
                     input.nextLine(); // consume newline
                     break;
                 } else {
-                    System.out.println("Invalid input. Please enter a number.");
+                    System.out.println("Invalid input. Please enter a number."); // checks for invalid input. if the input is invalid, it will restart the grade loop.
                     input.next(); // discard invalid input
                     /// if you forget to validate input like this, then somone could accidentally input a letter and break the whole code. 
                     /// it is also important to validate since even in this code, grades can be inputted that are well outside the 0-100 range that would also break the code.
